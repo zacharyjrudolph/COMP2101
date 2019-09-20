@@ -24,6 +24,6 @@ The Pictures directory uses $(du -sh ~/Pictures|awk '{print $1}') space on the d
 EOF
 
 
-test -f ~/Pictures/pics.tgz || wget -O -q ~/Pictures/pics.tgz https://zonzorp.net/pics.tgz
+test -f ~/Pictures/pics.tgz || wget -q -O ~/Pictures/pics.tgz https://zonzorp.net/pics.tgz
 tar -C ~/Pictures -xvf ~/Pictures/pics.tgz && echo "the files have been unpacked" || echo "the file was unable to be unpacked"
 rm ~/Pictures/pics.tgz && echo "removed original tar file" || echo "failed to remove original tar file"
